@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Cat",
+    "desc": "A cat is a domestic animal that is often kept as a pet. It is a small, furry animal with four legs, a tail, and sharp claws.",
+    "img": "cat.jpeg",
+    "vid": ""
+  },
+  {
+    "name": "Chihuahua",
+    "desc": "The Chihuahua is the smallest breed of dog, and is named after the Mexican state of Chihuahua. Chihuahuas come in a wide variety of colors, and two coat lengths.",
+    "img": "chihuahua.jpeg",
+    "vid": ""
+  },
+  {
+    "name": "frigatebird",
+    "desc": "Frigatebirds are a family of seabirds called Fregatidae which are found across all tropical and subtropical oceans. The five extant species are classified in a single genus, Fregata.",
+    "img": "frigatebird.jpeg",
+    "vid": ""
+  },
+  {
+    "name": "gecko",
+    "desc": "Geckos are lizards belonging to the infraorder Gekkota, found in warm climates throughout the world. They range from 1.6 to 60 cm.",
+    "img": "gecko.jpeg",
+    "vid": ""
+  },
+  {
+    "name": "Husky",
+    "desc": "The Siberian Husky is a medium size working dog breed that originated in Northeast Asia. The breed belongs to the Spitz genetic family.",
+    "img": "husky.jpeg",
+    "vid": ""
+  },
+  {
+    "name": "Yellow Crowned Night Heron",
+    "desc": "The yellow-crowned night heron is one of two species of night herons found in the Americas, the other one being the black-crowned night heron.",
+    "img": "yellowcrownednightheron.jpeg",
+    "vid": ""
+  },
+  {
+    "name": "Bottle Nosed Dolphin",
+    "desc": "The common bottlenose dolphin, or Atlantic bottlenose dolphin, is the most well-known species from the family Delphinidae.",
+    "img": "",
+    "vid": "bottlenosedolphin.mp4"
+  },
+  {
+    "name": "Crocodile",
+    "desc": "Crocodiles or true crocodiles are large aquatic reptiles that live throughout the tropics in Africa, Asia, the Americas and Australia.",
+    "img": "",
+    "vid": "crocodile.mp4"
+  },
+  {
+    "name": "Humpback Whale",
+    "desc": "The humpback whale is a species of baleen whale. One of the larger rorqual species, adults range in length from 12–16 m and weigh about 36,000 kg.",
+    "img": "",
+    "vid": "humpbackwhale.mp4"
+  },
+  {
+    "name": "Pelican",
+    "desc": "Pelicans are a genus of large water birds that make up the family Pelecanidae. They are characterised by a long beak and a large throat pouch used for catching prey and draining water from the scooped-up contents before swallowing.",
+    "img": "",
+    "vid": "pelican.mp4"
+  }
+]

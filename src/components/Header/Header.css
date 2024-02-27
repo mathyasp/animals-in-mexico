@@ -16,3 +16,13 @@
 .Header-Subtitle {
   color: #fff;
 }
+
+button {
+  background-color: #f0f0f0; 
+  color: #000;
+}
+
+button.selected {
+  background-color: #007BFF; 
+  color: #fff;
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Gato",
+    "desc": "Un gato es un animal doméstico que a menudo se mantiene como mascota. Es un animal pequeño, peludo, con cuatro patas, una cola y garras afiladas.",
+    "img": "cat.jpeg",
+    "vid": ""
+  },
+  {
+    "name": "Chihuahua",
+    "desc": "El Chihuahua es la raza de perro más pequeña y lleva el nombre del estado mexicano de Chihuahua. Los Chihuahuas vienen en una amplia variedad de colores y dos longitudes de pelaje.",
+    "img": "chihuahua.jpeg",
+    "vid": ""
+  },
+  {
+    "name": "Ave Fragata",
+    "desc": "Las aves fragatas son una familia de aves marinas llamadas Fregatidae que se encuentran en todos los océanos tropicales y subtropicales. Las cinco especies existentes se clasifican en un solo género, Fregata.",
+    "img": "frigatebird.jpeg",
+    "vid": ""
+  },
+  {
+    "name": "Gecko",
+    "desc": "Los geckos son lagartos pertenecientes al infraorden Gekkota, que se encuentran en climas cálidos de todo el mundo. Tienen un rango de tamaño de 1.6 a 60 cm.",
+    "img": "gecko.jpeg",
+    "vid": ""
+  },
+  {
+    "name": "Husky",
+    "desc": "El Husky Siberiano es una raza de perro de tamaño mediano que se originó en el noreste de Asia. La raza pertenece a la familia genética Spitz.",
+    "img": "husky.jpeg",
+    "vid": ""
+  },
+  {
+    "name": "Garza Nocturna de Corona Amarilla",
+    "desc": "La garza nocturna de corona amarilla es una de las dos especies de garzas nocturnas que se encuentran en las Américas, siendo la otra la garza nocturna de corona negra.",
+    "img": "yellowcrownednightheron.jpeg",
+    "vid": ""
+  },
+  {
+    "name": "Delfín Nariz de Botella",
+    "desc": "El delfín nariz de botella común, o delfín nariz de botella atlántico, es la especie más conocida de la familia Delphinidae.",
+    "img": "",
+    "vid": "bottlenosedolphin.mp4"
+  },
+  {
+    "name": "Cocodrilo",
+    "desc": "Los cocodrilos o cocodrilos verdaderos son grandes reptiles acuáticos que viven en los trópicos de África, Asia, las Américas y Australia.",
+    "img": "",
+    "vid": "crocodile.mp4"
+  },
+  {
+    "name": "Ballena Jorobada",
+    "desc": "La ballena jorobada es una especie de ballena barbada. Como una de las especies de rorcual más grandes, los adultos tienen una longitud de 12 a 16 m y pesan alrededor de 36,000 kg.",
+    "img": "",
+    "vid": "humpbackwhale.mp4"
+  },
+  {
+    "name": "Pelícano",
+    "desc": "Los pelícanos son un género de aves acuáticas de gran tamaño que conforman la familia Pelecanidae. Se caracterizan por su largo pico y una gran bolsa en la garganta que utilizan para atrapar presas y drenar el agua antes de tragar.",
+    "img": "",
+    "vid": "pelican.mp4"
+  }
+]
