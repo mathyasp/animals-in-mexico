@@ -1,7 +1,7 @@
 import spanishData from './animalDataSpanish.json';
-import { Animal } from './src/types';
+import { AnimalType } from './src/types';
 
-spanishData.forEach((animal: Animal, i: number) => {
+spanishData.forEach((animal: AnimalType, i: number) => {
   animal.id = i;
 });
 

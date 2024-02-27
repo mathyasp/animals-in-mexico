@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import './App.css';
 import Header from './components/Header';
-import './App.css'
+
 
 function App() {
   const [isSpanish, setIsSpanish] = useState(false);
@@ -8,6 +9,7 @@ function App() {
   return (
     <div className='App'>
       <Header isSpanish={isSpanish} handleLanguageChange={setIsSpanish} />
+      
     </div>
   )
 }
