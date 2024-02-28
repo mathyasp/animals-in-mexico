@@ -7,9 +7,9 @@ interface HeaderProps {
 
 function Header({ isSpanish, handleLanguageChange }: HeaderProps) {
   return (
-    <div className="Header">
+    <div className='Header'>
       <h1>{isSpanish ? 'Animales en México' : 'Animals In Mexico'}</h1>
-      <h2 className="Header-Subtitle">
+      <h2 className='Header-Subtitle'>
         {isSpanish
           ? 'Colección de diferentes animales que vi en Puerto Vallarta, México'
           : 'Collection of different animals I saw in Puerto Vallarta, Mexico'}

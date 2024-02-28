@@ -1,9 +1,8 @@
-import { useParams } from 'react-router-dom';
 import './Animal.css';
+import { useParams } from 'react-router-dom';
+import { AnimalType } from '../../types';
 import englishDataWithIds from '../../../animalDataEnglish';
 import spanishDataWithIds from '../../../animalDataSpanish';
-import { AnimalType } from '../../types';
-
 interface AnimalProps {
   animal?: AnimalType;
   isSpanish: boolean;
@@ -23,12 +22,12 @@ function Animal({ animal, isSpanish }: AnimalProps) {
   }
 
   if (!animal) {
-    return <div>{isSpanish ? "No se encontró ningún animal" : "No animal found"}</div>;
+    return <div>{isSpanish ? 'No se encontró ningún animal' : 'No animal found'}</div>;
   }
 
   return (
-    <div className="Animal">
-      <div className="Animal-Image-Video">
+    <div className='Animal'>
+      <div className='Animal-Image-Video'>
         {animal.img && <img src={`/images/${animal.img}`} alt={animal.name} />}
         {animal.vid && <video src={`/videos/${animal.vid}`} controls muted loop />}
       </div>

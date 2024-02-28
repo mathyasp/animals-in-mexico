@@ -31,8 +31,8 @@ function AnimalFilter({ isSpanish }: AnimalFilterProps) {
   return (
     <div>
       <input
-        type="text"
-        placeholder={isSpanish ? "Buscar un animal" : "Search for an animal"}
+        type='text'
+        placeholder={isSpanish ? 'Buscar un animal' : 'Search for an animal'}
         value={searchTerm}
         onChange={event => setSearchTerm(event.target.value)}
       />
