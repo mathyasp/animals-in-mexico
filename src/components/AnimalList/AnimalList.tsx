@@ -16,7 +16,7 @@ function AnimalList({ isSpanish }: AnimalProps) {
     <div className="AnimalList">
       {data.map((animal: AnimalType) => (
         <Link to={`/animal/${animal.id}`} key={animal.id}>
-          <Animal animal={animal} />
+          <Animal animal={animal} isSpanish={isSpanish} />
         </Link>
       ))}
     </div>

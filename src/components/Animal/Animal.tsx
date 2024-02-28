@@ -6,18 +6,24 @@ import { AnimalType } from '../../types';
 
 interface AnimalProps {
   animal?: AnimalType;
+  isSpanish: boolean;
 }
 
-function Animal({ animal }: AnimalProps) {
+function Animal({ animal, isSpanish }: AnimalProps) {
   const { id } = useParams<{ id: string }>();
 
   if (!animal) {
-    const animals = [...englishDataWithIds, ...spanishDataWithIds];
+    let animals: AnimalType[] = [];
+    if (isSpanish) {
+      animals = [...spanishDataWithIds];
+    } else {
+      animals = [...englishDataWithIds];
+    }
     animal = animals.find(animal => animal.id === Number(id));
   }
 
   if (!animal) {
-    return <div>No animal found</div>;
+    return <div>{isSpanish ? "No se encontró ningún animal" : "No animal found"}</div>;
   }
 
   return (

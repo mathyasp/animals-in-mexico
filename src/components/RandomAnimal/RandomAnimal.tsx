@@ -1,31 +1,22 @@
-import React from 'react';
 import { AnimalType } from '../../types';
 import englishDataWithIds from '../../../animalDataEnglish';
 import spanishDataWithIds from '../../../animalDataSpanish';
+import Animal from '../Animal/Animal';
 
 interface RandomAnimalProps {
   isSpanish: boolean;
   randomAnimalId: number | null;
 }
 
-const RandomAnimal: React.FC<RandomAnimalProps> = ({ isSpanish, randomAnimalId }) => {
+function RandomAnimal({ isSpanish, randomAnimalId }: RandomAnimalProps): JSX.Element {
   const animals: AnimalType[] = isSpanish ? spanishDataWithIds : englishDataWithIds;
   const randomAnimal = animals.find(animal => animal.id === randomAnimalId);
 
   if (!randomAnimal) {
-    return <div>No animal selected</div>;
+    return <div>{isSpanish ? "Ningún animal seleccionado" : "No animal selected"}</div>;
   }
 
-  return (
-    <div className="Animal">
-      <div className="Animal-Image-Video">
-        {randomAnimal.img && <img src={`/images/${randomAnimal.img}`} alt={randomAnimal.name} />}
-        {randomAnimal.vid && <video src={`/videos/${randomAnimal.vid}`} controls muted loop />}
-      </div>
-      <h1>{randomAnimal.name}</h1>
-      <p>{randomAnimal.desc}</p>
-    </div>
-  );
-};
+  return <Animal animal={randomAnimal} isSpanish={isSpanish} />;
+}
 
 export default RandomAnimal;
