@@ -23,17 +23,11 @@ function App() {
   return (
     <div className='App'>
       <Header isSpanish={isSpanish} handleLanguageChange={setIsSpanish} />
-      
-      <Link to='/animal-list' className='animal-list-link'>
-        {isSpanish ? 'Ir a la lista de animales' : 'Go to Animal List'}
-      </Link>
+      <AnimalFilter isSpanish={isSpanish} />
       <Link to='/random-animal' className='random-animal-link' onClick={handleRandomClick}>
         {isSpanish ? 'Ver un animal al azar' : 'See a Random Animal'}
       </Link>
-      <Link to='/search-animal' className='search-animal-link'>
-        {isSpanish ? 'Buscar un animal' : 'Search for an Animal'}
-      </Link>
-      
+
       <Routes>
         <Route 
           path='/animal-list' 

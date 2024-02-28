@@ -1,4 +1,6 @@
+import './AnimalFilter.css'
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { AnimalType } from '../../types';
 import englishDataWithIds from '../../../animalDataEnglish';
 import spanishDataWithIds from '../../../animalDataSpanish';
@@ -36,7 +38,11 @@ function AnimalFilter({ isSpanish }: AnimalFilterProps) {
         value={searchTerm}
         onChange={event => setSearchTerm(event.target.value)}
       />
-      {selectedAnimal && <Animal animal={selectedAnimal} isSpanish={isSpanish} />}
+      {selectedAnimal && (
+      <Link to={`/animal/${selectedAnimal.id}`}>
+        <Animal animal={selectedAnimal} isSpanish={isSpanish} />
+      </Link>
+      )}
     </div>
   );
 }

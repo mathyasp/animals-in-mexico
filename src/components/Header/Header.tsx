@@ -1,4 +1,5 @@
 import './Header.css'
+import NavBar from '../NavBar';
 
 interface HeaderProps {
   isSpanish: boolean;
@@ -8,26 +9,32 @@ interface HeaderProps {
 function Header({ isSpanish, handleLanguageChange }: HeaderProps) {
   return (
     <div className='Header'>
-      <h1>{isSpanish ? 'Animales en México' : 'Animals In Mexico'}</h1>
-      <h2 className='Header-Subtitle'>
-        {isSpanish
-          ? 'Colección de diferentes animales que vi en Puerto Vallarta, México'
-          : 'Collection of different animals I saw in Puerto Vallarta, Mexico'}
-      </h2>
-      <p>{isSpanish ? 'Febrero 2024' : 'February 2024'}</p>
-      <div>
-        <button
-          className={isSpanish ? 'selected' : ''}
-          onClick={() => handleLanguageChange(false)}
-        >
-          EN
-        </button>
-        <button
-          className={!isSpanish ? 'selected' : ''}
-          onClick={() => handleLanguageChange(true)}
-        >
-          ES
-        </button>
+      <div className='Header-Main'>
+        <h1>{isSpanish ? 'Animales en México' : 'Animals In Mexico'}</h1>
+        <h2 className='Header-Subtitle'>
+          {isSpanish
+            ? 'Colección de diferentes animales que vi en Puerto Vallarta, México'
+            : 'Collection of different animals I saw in Puerto Vallarta, Mexico'}
+        </h2>
+        <p>{isSpanish ? 'Febrero 2024' : 'February 2024'}</p>
+        <div>
+          <button
+            className={isSpanish ? 'selected' : ''}
+            onClick={() => handleLanguageChange(false)}
+          >
+            EN
+          </button>
+          <button
+            className={!isSpanish ? 'selected' : ''}
+            onClick={() => handleLanguageChange(true)}
+          >
+            ES
+          </button>
+        </div>
+      </div>
+
+      <div className='Header-NavBar'>
+        <NavBar isSpanish={isSpanish} />
       </div>
     </div>
   );

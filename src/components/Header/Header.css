@@ -1,28 +1,37 @@
 .Header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
-  height: 20%;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-bottom: 2em;
-  background-color: hsl(209, 52%, 39%);
-}
-
-.Header-Subtitle {
+  flex-direction: row;
+  justify-content: space-between;
   color: #fff;
+  background-color: hsl(209, 52%, 39%);
+  padding: 1em;
 }
 
-button {
+.Header-Main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 0.5em;
+}
+
+.Header button {
   background-color: #f0f0f0; 
   color: #000;
+  margin: 1em 0;
 }
 
-button.selected {
+.Header button.selected {
   background-color: #007BFF; 
   color: #fff;
+}
+
+.Header-NavBar {
+  display: flex;
+  align-items: center;
 }
