@@ -1,8 +1,9 @@
 import englishData from './animalDataEnglish.json';
 import { AnimalType } from './src/types';
 
-englishData.forEach((animal: AnimalType, i: number) => {
-  animal.id = i;
-});
+const englishDataWithIds: AnimalType[] = englishData.map((animal, i) => ({
+  id: i,
+  ...animal
+}));
 
-export default englishData;
+export default englishDataWithIds;

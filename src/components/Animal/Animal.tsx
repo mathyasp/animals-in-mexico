@@ -1,27 +1,33 @@
 import { useParams } from 'react-router-dom';
 import './Animal.css';
-import englishData from '../../../animalDataEnglish.ts';
-import spanishData from '../../../animalDataSpanish.ts';
+import englishDataWithIds from '../../../animalDataEnglish';
+import spanishDataWithIds from '../../../animalDataSpanish';
+import { AnimalType } from '../../types';
 
 interface AnimalProps {
-  isSpanish: boolean;
+  animal?: AnimalType;
 }
 
-function Animal ({ isSpanish }: AnimalProps) {
-  const data = isSpanish ? spanishData : englishData;
-  const params = useParams();
-  const { id } = params;
-  const { name, desc, img, vid } = data[Number(id)] || {}; // Add default empty object if data[Number(id)] is undefined
+function Animal({ animal }: AnimalProps) {
+  const { id } = useParams<{ id: string }>();
+
+  if (!animal) {
+    const animals = [...englishDataWithIds, ...spanishDataWithIds];
+    animal = animals.find(animal => animal.id === Number(id));
+  }
+
+  if (!animal) {
+    return <div>No animal found</div>;
+  }
 
   return (
     <div className="Animal">
       <div className="Animal-Image-Video">
-        {img && <img src={`/images/${img}`} alt={name} />}
-        {vid && <video src={`/videos/${vid}`} controls />}
+        {animal.img && <img src={`/images/${animal.img}`} alt={animal.name} />}
+        {animal.vid && <video src={`/videos/${animal.vid}`} controls muted loop />}
       </div>
-      <h1>{name}</h1>
-      <img src={img} alt={name} />
-      <p>{desc}</p>
+      <h1>{animal.name}</h1>
+      <p>{animal.desc}</p>
     </div>
   );
 } 
