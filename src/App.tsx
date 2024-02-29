@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { AnimalType } from './types';
 import englishDataWithIds from '../animalDataEnglish';
 import spanishDataWithIds from '../animalDataSpanish';
@@ -13,12 +13,16 @@ import AnimalFilter from './components/AnimalFilter';
 function App() {
   const [isSpanish, setIsSpanish] = useState(false);
   const [randomAnimal, setRandomAnimal] = useState<AnimalType | null>(null);
-
-  const handleRandomClick = () => {
+ 
+  const handleRandomClick = useCallback(() => {
     const animals: AnimalType[] = isSpanish ? spanishDataWithIds : englishDataWithIds;
     const newRandomAnimal: AnimalType = animals[Math.floor(Math.random() * animals.length)];
     setRandomAnimal(newRandomAnimal);
-  }
+  }, [isSpanish]);
+
+  useEffect(() => {
+    handleRandomClick();
+  }, [handleRandomClick]);
 
   return (
     <div className='App'>

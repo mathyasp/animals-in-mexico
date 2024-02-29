@@ -10,9 +10,13 @@ interface RandomAnimalProps {
 
 function RandomAnimal({ isSpanish, randomAnimalId }: RandomAnimalProps): JSX.Element {
   const animals: AnimalType[] = isSpanish ? spanishDataWithIds : englishDataWithIds;
-  const randomAnimal = animals.find(animal => animal.id === randomAnimalId);
+  let randomAnimal = null;
+  
+  if (randomAnimalId !== null) {
+    randomAnimal = animals.find(animal => animal.id === randomAnimalId);
+  }
 
-  return <Animal animal={randomAnimal} isSpanish={isSpanish} />;
+  return randomAnimal ? <Animal animal={randomAnimal} isSpanish={isSpanish} /> : <p>No animal found</p>;
 }
 
 export default RandomAnimal;
