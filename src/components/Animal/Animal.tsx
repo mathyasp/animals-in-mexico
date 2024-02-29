@@ -27,12 +27,12 @@ function Animal({ animal, isSpanish }: AnimalProps) {
 
   return (
     <div className='Animal'>
+      <h1>{animal.name}</h1>
+      <p>{animal.desc}</p>
       <div className='Animal-Image-Video'>
         {animal.img && <img src={`/images/${animal.img}`} alt={animal.name} />}
         {animal.vid && <video src={`/videos/${animal.vid}`} controls muted loop />}
       </div>
-      <h1>{animal.name}</h1>
-      <p>{animal.desc}</p>
     </div>
   );
 } 

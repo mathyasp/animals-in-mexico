@@ -2,9 +2,21 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 2em;
-	max-width: 1200px;
+	max-width: 100%;
 	margin: auto;
 	padding: 2em;
+}
+
+.AnimalList a {
+	font-size: 2em;
+	text-align: center;
+	width: 25vw;
+	background-color: hsl(209, 52%, 39%);
+}
+
+.AnimalList a img, video {
+	width: 25vw;
+	height: auto;
 }
 
 /* Smaller screens and tablets */

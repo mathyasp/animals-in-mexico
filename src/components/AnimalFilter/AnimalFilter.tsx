@@ -1,6 +1,6 @@
 import './AnimalFilter.css'
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AnimalType } from '../../types';
 import englishDataWithIds from '../../../animalDataEnglish';
 import spanishDataWithIds from '../../../animalDataSpanish';
@@ -11,38 +11,45 @@ interface AnimalFilterProps {
 }
 
 function AnimalFilter({ isSpanish }: AnimalFilterProps) {
-  const [searchTerm, setSearchTerm] = useState('');
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState<string | null>('');
   const [selectedAnimal, setSelectedAnimal] = useState<AnimalType | null>(null);
+
+  useEffect(() => {
+    setSearchTerm('');
+  }, [location.pathname]);
+
+  const handleFocus = () => {
+    navigate('/');
+  };
 
   useEffect(() => {
     if (selectedAnimal) {
       const newAnimals = isSpanish ? spanishDataWithIds : englishDataWithIds;
       const animalWithSameId = newAnimals.find(animal => animal.id === selectedAnimal.id);
       if (animalWithSameId) {
-        setSearchTerm(animalWithSameId.name);
+        setSearchTerm(animalWithSameId.name || null);
       }
     }
   }, [isSpanish, selectedAnimal]);
 
   useEffect(() => {
     const animals = isSpanish ? spanishDataWithIds : englishDataWithIds;
-    const foundAnimal = animals.find(animal => animal.name.toLowerCase() === searchTerm.toLowerCase());
+    const foundAnimal = animals.find(animal => animal.name.toLowerCase() === (searchTerm?.toLowerCase() || ''));
     setSelectedAnimal(foundAnimal || null);
   }, [searchTerm, isSpanish]);
 
   return (
-    <div>
+    <div className='Animal-Filter'>
       <input
         type='text'
         placeholder={isSpanish ? 'Buscar un animal' : 'Search for an animal'}
-        value={searchTerm}
+        value={searchTerm || ''}
         onChange={event => setSearchTerm(event.target.value)}
+        onFocus={handleFocus}
       />
-      {selectedAnimal && (
-      <Link to={`/animal/${selectedAnimal.id}`}>
-        <Animal animal={selectedAnimal} isSpanish={isSpanish} />
-      </Link>
-      )}
+      {selectedAnimal && (<Animal animal={selectedAnimal} isSpanish={isSpanish} />)}
     </div>
   );
 }

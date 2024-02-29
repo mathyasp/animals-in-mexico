@@ -1,4 +1,3 @@
-import './RandomAnimal.css';
 import { AnimalType } from '../../types';
 import englishDataWithIds from '../../../animalDataEnglish';
 import spanishDataWithIds from '../../../animalDataSpanish';
@@ -12,10 +11,6 @@ interface RandomAnimalProps {
 function RandomAnimal({ isSpanish, randomAnimalId }: RandomAnimalProps): JSX.Element {
   const animals: AnimalType[] = isSpanish ? spanishDataWithIds : englishDataWithIds;
   const randomAnimal = animals.find(animal => animal.id === randomAnimalId);
-
-  if (!randomAnimal) {
-    return <div>{isSpanish ? 'Ningún animal seleccionado' : 'No animal selected'}</div>;
-  }
 
   return <Animal animal={randomAnimal} isSpanish={isSpanish} />;
 }

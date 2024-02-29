@@ -10,8 +10,35 @@
   overflow: auto;
 }
 
+.App-Content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-right: 2em;
+}
+
 .App a {
-  display: block;
-  margin-top: 15%;
-  background-color: white;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.5em;
+  margin: 0.5em;
+}
+
+.App .Animal {
+  width: 35%;
+  height: auto;
+  margin-left: 32.5%;
+  font-size: 3em;
+  color: #fff;
+}
+
+.App .Animal-Filter {
+  margin: 0.5em;
 }

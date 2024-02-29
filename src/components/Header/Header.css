@@ -17,7 +17,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  line-height: 0.5em;
+  line-height: 1em;
+}
+
+.Header-Main h1 {
+  font-size: 4em;
+}
+
+.Header-Main h2 {
+  font-size: 2em;
+}
+
+.Header-Main p {
+  font-size: 1.5em;
 }
 
 .Header button {
