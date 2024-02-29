@@ -21,7 +21,7 @@ function AnimalFilter({ isSpanish }: AnimalFilterProps) {
   }, [location.pathname]);
 
   const handleFocus = () => {
-    navigate('/');
+    navigate('/animals-in-mexico/');
   };
 
   useEffect(() => {

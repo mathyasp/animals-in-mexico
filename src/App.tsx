@@ -24,7 +24,7 @@ function App() {
     <div className='App'>
       <Header isSpanish={isSpanish} handleLanguageChange={setIsSpanish} />
       <div className='App-Content'>
-        <Link to='/random-animal' className='random-animal-link' onClick={handleRandomClick}>
+        <Link to='/animals-in-mexico/random-animal' className='random-animal-link' onClick={handleRandomClick}>
           {isSpanish ? 'Ver un animal al azar' : 'See a Random Animal'}
         </Link>
         <AnimalFilter isSpanish={isSpanish} />
@@ -32,19 +32,23 @@ function App() {
 
       <Routes>
         <Route 
-          path='/animal-list' 
+          path='/animals-in-mexico//*' 
+          element={<App />} 
+        />
+        <Route 
+          path='/animals-in-mexico/animal-list' 
           element={<AnimalList isSpanish={isSpanish}/>} 
         />
         <Route 
-          path='/animal/:id' 
+          path='/animals-in-mexico/animal/:id' 
           element={<Animal isSpanish={isSpanish}/>} 
         />
         <Route
-          path='/random-animal'
+          path='/animals-in-mexico/random-animal'
           element={<RandomAnimal randomAnimalId={randomAnimal?.id ?? null} isSpanish={isSpanish}/>} 
         />
         <Route 
-        path='/search-animal' 
+        path='/animals-in-mexico/search-animal' 
         element={<AnimalFilter isSpanish={isSpanish}/>} 
         />
       </Routes>

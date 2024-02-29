@@ -30,8 +30,8 @@ function Animal({ animal, isSpanish }: AnimalProps) {
       <h1>{animal.name}</h1>
       <p>{animal.desc}</p>
       <div className='Animal-Image-Video'>
-        {animal.img && <img src={`/images/${animal.img}`} alt={animal.name} />}
-        {animal.vid && <video src={`/videos/${animal.vid}`} controls muted loop />}
+        {animal.img && <img src={`/animals-in-mexico/images/${animal.img}`} alt={animal.name} />}
+        {animal.vid && <video src={`/animals-in-mexico/videos/${animal.vid}`} controls muted loop />}
       </div>
     </div>
   );

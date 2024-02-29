@@ -14,11 +14,11 @@ function AnimalList({ isSpanish }: AnimalProps) {
   return (
     <div className='AnimalList'>
       {data.map((animal: AnimalType) => (
-        <Link to={`/animal/${animal.id}`} key={animal.id}>
+        <Link to={`/animals-in-mexico/animal/${animal.id}`} key={animal.id}>
           <div className='AnimalList__animal'>
             <h3>{animal.name}</h3>
-            {animal.img && <img src={`/images/${animal.img}`} alt={animal.name} />}
-            {animal.vid && <video src={`/videos/${animal.vid}`} controls muted loop />}
+            {animal.img && <img src={`/animals-in-mexico/images/${animal.img}`} alt={animal.name} />}
+            {animal.vid && <video src={`/animals-in-mexico/videos/${animal.vid}`} controls muted loop />}
           </div>
         </Link>
       ))}
