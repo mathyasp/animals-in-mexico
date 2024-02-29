@@ -14,11 +14,6 @@
 	background-color: hsl(209, 52%, 39%);
 }
 
-.AnimalList a img, video {
-	width: 25vw;
-	height: auto;
-}
-
 /* Smaller screens and tablets */
 @media only screen and (max-width: 960px) {
 	.AnimalList {
@@ -31,4 +26,12 @@
 	.AnimalList {
 		grid-template-columns: 1fr;
 	}
+}
+
+.AnimalList-animal {
+	display: flex;
+	flex-direction: column;
+	align-items: space-between;
+	width: 25vw;
+	height: auto;
 }

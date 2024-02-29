@@ -17,25 +17,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  line-height: 1em;
+  line-height: 1.5;
 }
 
 .Header-Main h1 {
-  font-size: 4em;
-}
-
-.Header-Main h2 {
   font-size: 2em;
 }
 
-.Header-Main p {
+.Header-Main h2 {
   font-size: 1.5em;
+}
+
+.Header-Main p {
+  font-size: 1em;
 }
 
 .Header button {
   background-color: #f0f0f0; 
   color: #000;
-  margin: 1em 0;
 }
 
 .Header button.selected {
