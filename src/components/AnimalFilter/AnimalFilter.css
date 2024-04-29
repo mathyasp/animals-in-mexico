@@ -1,12 +1,12 @@
 input[type='text'] {
-  width: 12em;
+  width: 140px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: 2px solid #ccc;
+  border: 1px solid #ccc;
   border-radius: 4px;
   color: #000;
   background-color: #f8f8f8;
-  font-size: 1em;
+  font-size: .8em;
   transition: 0.3s;
   padding: 0.5em;
   text-align: center;

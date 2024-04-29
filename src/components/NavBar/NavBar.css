@@ -1,24 +1,81 @@
 .NavBar {
+  background-color: hsl(209, 52%, 39%);
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
   justify-content: space-between;
+  align-items: center;
+  line-height: 1;
 }
 
-nav {
+.NavLeft, .NavCenter, .NavRight {
   display: flex;
+  width: 33.33%;
+}
 
+.NavLeft {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.NavCenter {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.NavRight {
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 nav .link {
   color: #fff;
   background: none;
   font-size: 1.5em;
-  margin-left: 0.5em;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
 nav .link:hover {
   color: #ccc;
+}
+
+.NavLeft .link {
+  padding-left: 1em;
+  margin: 0;
+}
+
+.NavLeft .link.selected {
+  color: #3e3e3e;
+}
+
+.NavRight {
+  padding-right: 1em;
+  margin: 0;
+}
+
+.NavRight button {
+  background-color: #f0f0f0; 
+  color: #000;
+  font-size: .8em;
+  padding: 0.5em .8em;
+}
+
+.NavRight button.selected {
+  background-color: #007BFF; 
+  color: #fff;
+}
+
+.NavDate {
+  font-size: 0.8em;
+  color: #ccc;
+}
+
+a.randomlink {
+  width: 140px;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: .8em;
+  padding: 0.5em;
+  text-align: center;
 }
