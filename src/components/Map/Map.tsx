@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect } from 'react';
 import './Map.css';
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -10,18 +11,24 @@ declare global {
 }
 
 function Map() {
-  useEffect(() => {
-    if (!window.google) {
-      window.initMap = function() {
-        const map = new window.google.maps.Map(document.getElementById('map'), {
-          center: { lat: 20.6534, lng: -105.2253 }, // Puerto Vallarta, Mexico
-          zoom: 8
-        });
+  const initializeMap = () => {
+    const map = new window.google.maps.Map(document.getElementById('map'), {
+      center: { lat: 20.6534, lng: -105.2253 }, // Puerto Vallarta, Mexico
+      zoom: 8
+    });
 
-        new window.google.maps.Marker({
-          position: { lat: 20.6534, lng: -105.2253 },
-          map: map
-        });
+    new window.google.maps.Marker({
+      position: { lat: 20.6534, lng: -105.2253 },
+      map: map
+    });
+  };
+
+  useEffect(() => {
+    if (window.google) {
+      initializeMap();
+    } else {
+      window.initMap = function() {
+        initializeMap();
       };
 
       if (!document.querySelector('script[src^="https://maps.googleapis.com/maps/api/js"]')) {

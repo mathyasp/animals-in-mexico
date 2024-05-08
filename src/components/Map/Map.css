@@ -1,8 +1,14 @@
 .Map {
-  height: 500px; 
-  width: 50%;
+  height: 100%; 
+  width: 75vw;
   position: absolute;
-  top: 50%;
+  top: calc(50% + 25vh);
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@media screen and (max-height: 650px) {
+  .Map {
+    top: calc(50% + 40vh);
+  }
 }

@@ -32,7 +32,6 @@ function App() {
           path='/animals-in-mexico//*' 
           element={
             <>
-              <App />
               <Map />
             </>
           } 

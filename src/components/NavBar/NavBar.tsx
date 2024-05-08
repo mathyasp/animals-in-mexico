@@ -45,7 +45,7 @@ function NavBar({ isSpanish, handleLanguageChange, handleRandomClick }: NavBarPr
       </div>
 
       <nav className='NavRight'>
-        <div>
+        <div className='Translate'>
           <button
             className={isSpanish ? 'selected' : ''}
             onClick={() => handleLanguageChange(false)}
@@ -59,10 +59,12 @@ function NavBar({ isSpanish, handleLanguageChange, handleRandomClick }: NavBarPr
             ES
           </button>
         </div>
-        <AnimalFilter isSpanish={isSpanish} />
-        <Link to='/animals-in-mexico/random-animal' className='randomlink' onClick={handleRandomClick}>
-          {isSpanish ? 'Animal al azar' : 'Random Animal'}
-        </Link>
+        <div className='TaskBars'>
+          <AnimalFilter isSpanish={isSpanish} />
+          <Link to='/animals-in-mexico/random-animal' className='randomlink' onClick={handleRandomClick}>
+            {isSpanish ? 'Animal al azar' : 'Random Animal'}
+          </Link>
+        </div>
       </nav>
     </div>
   );

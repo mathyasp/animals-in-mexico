@@ -39,6 +39,10 @@ nav .link:hover {
   color: #ccc;
 }
 
+.NavBar .NavRight .TaskBars .randomlink {
+  margin-left: 0.5em;
+}
+
 .NavLeft .link {
   padding-left: 1em;
   margin: 0;
@@ -78,4 +82,37 @@ a.randomlink {
   font-size: .8em;
   padding: 0.5em;
   text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .NavBar {
+    flex-direction: column;
+  }
+  .NavLeft, .NavCenter, .NavRight {
+    width: 100%;
+  }
+  .NavLeft {
+    justify-content: center;
+  }
+  .NavRight {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+  }
+
+  .NavRight .Translate {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .NavRight .TaskBars {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+  }
+  .NavSubtitle,
+  .NavDate {
+    display: none;
+  }
 }
