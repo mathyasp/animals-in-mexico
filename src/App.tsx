@@ -29,7 +29,7 @@ function App() {
       <NavBar isSpanish={isSpanish} handleLanguageChange={setIsSpanish} handleRandomClick={handleRandomClick} />
       <Routes>
         <Route 
-          path='/animals-in-mexico//*' 
+          path='/animals-in-mexico/' 
           element={
             <>
               <Map />

@@ -1,7 +1,6 @@
 import './NavBar.css';
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars } from 'react-icons/fa';
 import AnimalFilter from '../AnimalFilter/AnimalFilter';
 
 interface NavBarProps {
@@ -11,28 +10,9 @@ interface NavBarProps {
 }
 
 function NavBar({ isSpanish, handleLanguageChange, handleRandomClick }: NavBarProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedLink, setSelectedLink] = useState<string>('');
   const location = useLocation();
-
-  const handleMenuClick = () => {
-    if (windowSize < 800) {
-      setIsMenuOpen(!isMenuOpen);
-    }
-  };
-
-  const handleResize = () => {
-    setWindowSize(window.innerWidth);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-  
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   useEffect(() => {
     setSelectedLink(location.pathname);
@@ -40,20 +20,24 @@ function NavBar({ isSpanish, handleLanguageChange, handleRandomClick }: NavBarPr
 
   return (
     <div className='NavBar'>
-      <nav className={`NavLeft ${isMenuOpen ? 'open' : ''}`}>
-        <FaBars className='hamburger' onClick={handleMenuClick} />
-        <Link 
-          className={`link ${selectedLink === '/animals-in-mexico/' ? 'selected' : ''}`} 
-          to='/animals-in-mexico/'
-        >
-          {isSpanish ? 'Inicio' : 'Home'}
-        </Link>
-        <Link 
-          className={`link ${selectedLink === '/animals-in-mexico/animal-list' ? 'selected' : ''}`} 
-          to='/animals-in-mexico/animal-list'
-        >
-          {isSpanish ? 'Lista de Animales' : 'Animal List'}
-        </Link>
+      <nav className='NavLeft'>
+        <button className='hamburger' onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          &#9776;
+        </button>
+        <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
+          <Link 
+            className={`link ${selectedLink === '/animals-in-mexico/' ? 'selected' : ''}`} 
+            to='/animals-in-mexico/'
+          >
+            {isSpanish ? 'Inicio' : 'Home'}
+          </Link>
+          <Link 
+            className={`link ${selectedLink === '/animals-in-mexico/animal-list' ? 'selected' : ''}`} 
+            to='/animals-in-mexico/animal-list'
+          >
+            {isSpanish ? 'Lista de Animales' : 'Animal List'}
+          </Link>
+        </div>
       </nav>
 
       <div className='NavCenter'>
