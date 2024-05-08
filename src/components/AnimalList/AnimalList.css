@@ -1,10 +1,12 @@
 .AnimalList {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-gap: 2em;
+	grid-gap: 1em;
 	max-width: 100%;
 	margin: auto;
-	padding: 2em;
+	padding: 1em;
+	justify-items: center; 
+	align-items: center; 
 }
 
 .AnimalList a {
@@ -12,6 +14,14 @@
 	text-align: center;
 	width: 25vw;
 	background-color: hsl(209, 52%, 39%);
+}
+
+.AnimalList-animal {
+	display: flex;
+	flex-direction: column;
+	align-items: space-between;
+	width: 25vw;
+	height: auto;
 }
 
 /* Smaller screens and tablets */
@@ -22,16 +32,16 @@
 }
 
 /* Small screens mobile */
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
 	.AnimalList {
 		grid-template-columns: 1fr;
+		width: 85vw;
 	}
-}
+	.AnimalList a {
+		width: 75vw;
+	}
+	.AnimalList-animal {
+		width: 100%;
 
-.AnimalList-animal {
-	display: flex;
-	flex-direction: column;
-	align-items: space-between;
-	width: 25vw;
-	height: auto;
+	}
 }
