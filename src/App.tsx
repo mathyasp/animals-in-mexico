@@ -9,6 +9,7 @@ import NavBar from './components/NavBar/NavBar';
 import AnimalList from './components/AnimalList/AnimalList';
 import Animal from './components/Animal';
 import RandomAnimal from './components/RandomAnimal';
+import AnimalSearchResult from './components/AnimalSearchResult';
 
 function App() {
   const [isSpanish, setIsSpanish] = useState(false);
@@ -29,10 +30,10 @@ function App() {
       <NavBar isSpanish={isSpanish} handleLanguageChange={setIsSpanish} handleRandomClick={handleRandomClick} />
       <Routes>
         <Route 
-          path='/animals-in-mexico/' 
+          path='/animals-in-mexico//*' 
           element={
             <>
-              <Map />
+              <Map isSpanish={isSpanish}/>
             </>
           } 
         />
@@ -48,6 +49,7 @@ function App() {
           path='/animals-in-mexico/random-animal'
           element={<RandomAnimal randomAnimalId={randomAnimal?.id ?? null} isSpanish={isSpanish}/>} 
         />
+        <Route path="/search/:animalName" element={<AnimalSearchResult isSpanish={isSpanish} />} />
       </Routes>
     </div>
   )

@@ -10,7 +10,11 @@ declare global {
   }
 }
 
-function Map() {
+interface MapProps {
+  isSpanish: boolean;
+}
+
+function Map({ isSpanish }: MapProps) {
   const initializeMap = () => {
     const map = new window.google.maps.Map(document.getElementById('map'), {
       center: { lat: 20.6534, lng: -105.2253 }, // Puerto Vallarta, Mexico
@@ -43,7 +47,7 @@ function Map() {
 
   return (
     <div className='Map'>
-      <h2>Map</h2>
+      <h2>{isSpanish ? 'Mapa' : 'Map'}</h2>
       <div id='map' style={{ height: '500px', width: '100%' }}></div>
     </div>
   );
