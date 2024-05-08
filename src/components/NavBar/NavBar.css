@@ -84,15 +84,32 @@ a.randomlink {
   text-align: center;
 }
 
+@media (min-width: 800px) {
+  .hamburger {
+    display: none;
+  }
+
+  .NavLeft {
+    display: flex;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .NavBar {
     flex-direction: column;
   }
-  .NavLeft, .NavCenter, .NavRight {
-    width: 100%;
+  .hamburger {
+    display: block;
   }
   .NavLeft {
+    display: none;
     justify-content: center;
+  }
+  .NavLeft.open {
+    display: flex;
+  }
+  .NavLeft, .NavCenter, .NavRight {
+    width: 100%;
   }
   .NavRight {
     display: grid;

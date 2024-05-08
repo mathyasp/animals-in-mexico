@@ -1,6 +1,7 @@
 import './NavBar.css';
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { FaBars } from 'react-icons/fa';
 import AnimalFilter from '../AnimalFilter/AnimalFilter';
 
 interface NavBarProps {
@@ -10,8 +11,28 @@ interface NavBarProps {
 }
 
 function NavBar({ isSpanish, handleLanguageChange, handleRandomClick }: NavBarProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
   const [selectedLink, setSelectedLink] = useState<string>('');
   const location = useLocation();
+
+  const handleMenuClick = () => {
+    if (windowSize < 800) {
+      setIsMenuOpen(!isMenuOpen);
+    }
+  };
+
+  const handleResize = () => {
+    setWindowSize(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+  
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     setSelectedLink(location.pathname);
@@ -19,7 +40,8 @@ function NavBar({ isSpanish, handleLanguageChange, handleRandomClick }: NavBarPr
 
   return (
     <div className='NavBar'>
-      <nav className='NavLeft'>
+      <nav className={`NavLeft ${isMenuOpen ? 'open' : ''}`}>
+        <FaBars className='hamburger' onClick={handleMenuClick} />
         <Link 
           className={`link ${selectedLink === '/animals-in-mexico/' ? 'selected' : ''}`} 
           to='/animals-in-mexico/'
