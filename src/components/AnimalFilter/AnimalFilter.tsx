@@ -2,8 +2,6 @@ import './AnimalFilter.css'
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AnimalType } from '../../types';
-import englishDataWithIds from '../../../animalDataEnglish';
-import spanishDataWithIds from '../../../animalDataSpanish';
 import Animal from '../Animal/Animal';
 
 interface AnimalFilterProps {
@@ -14,31 +12,15 @@ function AnimalFilter({ isSpanish }: AnimalFilterProps) {
   const location = useLocation();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState<string | null>('');
-  const [selectedAnimal, setSelectedAnimal] = useState<AnimalType | null>(null);
+  const [selectedAnimal] = useState<AnimalType | null>(null);
 
   useEffect(() => {
     setSearchTerm('');
   }, [location.pathname]);
 
   const handleFocus = () => {
-    navigate('/animals-in-mexico/');
+    navigate(`/search/${searchTerm}`);
   };
-
-  useEffect(() => {
-    if (selectedAnimal) {
-      const newAnimals = isSpanish ? spanishDataWithIds : englishDataWithIds;
-      const animalWithSameId = newAnimals.find(animal => animal.id === selectedAnimal.id);
-      if (animalWithSameId) {
-        setSearchTerm(animalWithSameId.name || null);
-      }
-    }
-  }, [isSpanish, selectedAnimal]);
-
-  useEffect(() => {
-    const animals = isSpanish ? spanishDataWithIds : englishDataWithIds;
-    const foundAnimal = animals.find(animal => animal.name.toLowerCase() === (searchTerm?.toLowerCase() || ''));
-    setSelectedAnimal(foundAnimal || null);
-  }, [searchTerm, isSpanish]);
 
   return (
     <div className='Animal-Filter'>
@@ -47,6 +29,11 @@ function AnimalFilter({ isSpanish }: AnimalFilterProps) {
         placeholder={isSpanish ? 'Buscar un animal' : 'Search for an animal'}
         value={searchTerm || ''}
         onChange={event => setSearchTerm(event.target.value)}
+        onKeyDown={event => {
+          if (event.key === 'Enter' && searchTerm) {
+            navigate(`/search/${searchTerm}`);
+          }
+        }}
         onFocus={handleFocus}
       />
       {selectedAnimal && (<Animal animal={selectedAnimal} isSpanish={isSpanish} />)}

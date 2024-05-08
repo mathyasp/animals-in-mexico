@@ -31,11 +31,11 @@
 }
 
 .App .Animal {
-  width: 35%;
+  width: 75vw;
   height: auto;
-  margin-left: 32.5%;
   color: white;
   font-weight: bold;
+  margin: 0 auto;
 }
 
 .App .Animal-Filter {

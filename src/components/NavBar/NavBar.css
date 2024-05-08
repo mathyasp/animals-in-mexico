@@ -1,24 +1,148 @@
 .NavBar {
+  background-color: hsl(209, 52%, 39%);
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
   justify-content: space-between;
+  align-items: center;
+  line-height: 1;
 }
 
-nav {
+.NavLeft, .NavCenter, .NavRight {
   display: flex;
+  width: 33.33%;
+}
 
+.NavLeft {
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.hamburger {
+  display: none;
+}
+
+.NavCenter {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.NavRight {
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 nav .link {
   color: #fff;
   background: none;
   font-size: 1.5em;
-  margin-left: 0.5em;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
 nav .link:hover {
   color: #ccc;
+}
+
+.NavBar .NavRight .TaskBars .randomlink {
+  margin-left: 0.5em;
+}
+
+.NavLeft .link {
+  padding-left: 1em;
+  margin: 0;
+}
+
+.NavLeft .link.selected {
+  color: #3e3e3e;
+}
+
+.NavRight {
+  padding-right: 1em;
+  margin: 0;
+}
+
+.NavRight button {
+  background-color: #f0f0f0; 
+  color: #000;
+  font-size: .8em;
+  padding: 0.5em .8em;
+}
+
+.NavRight button.selected {
+  background-color: #007BFF; 
+  color: #fff;
+}
+
+.NavDate {
+  font-size: 0.8em;
+  color: #ccc;
+}
+
+a.randomlink {
+  width: 140px;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: .8em;
+  padding: 0.5em;
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .NavBar {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+  .NavLeft, .NavCenter, .NavRight {
+    width: 100%;
+  }
+  .NavLeft {
+    justify-content: center;
+    align-self: first baseline;
+    display: flex;
+    grid-row: 2; 
+  }
+  .hamburger {
+    display: block;
+    margin-left: .5em;
+  }
+  .menu {
+    display: none;
+  }
+  .menu.open {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    left: 75%;
+    top: 10;
+    z-index: 1; /* Added to ensure .menu.open is above other elements */
+  }
+  .NavCenter {
+    grid-row: 1;
+    position: absolute;
+    margin-bottom: 5em;
+  }
+  .NavRight {
+    grid-column: span 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+  }
+  .Translate {
+    grid-column: 2;
+    margin-right: 0.5em;
+    justify-self: flex-end;
+  }
+  .TaskBars {
+    grid-column: 1;
+    justify-self: center;
+    margin: auto;
+  }
+  .NavSubtitle,
+  .NavDate {
+    display: none;
+  }
 }
