@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { AnimalType } from './types';
 import englishDataWithIds from '../animalDataEnglish';
 import spanishDataWithIds from '../animalDataSpanish';
+import Map from './components/Map/Map';
 import NavBar from './components/NavBar/NavBar';
 import AnimalList from './components/AnimalList/AnimalList';
 import Animal from './components/Animal';
@@ -28,8 +29,13 @@ function App() {
       <NavBar isSpanish={isSpanish} handleLanguageChange={setIsSpanish} handleRandomClick={handleRandomClick} />
       <Routes>
         <Route 
-          path='/animals-in-mexico/' 
-          element={<App />} 
+          path='/animals-in-mexico//*' 
+          element={
+            <>
+              <App />
+              <Map />
+            </>
+          } 
         />
         <Route 
           path='/animals-in-mexico/animal-list' 
