@@ -39,9 +39,9 @@
 	}
 	.AnimalList a {
 		width: 75vw;
+		margin: 0 auto;
 	}
 	.AnimalList-animal {
 		width: 100%;
-
 	}
 }
