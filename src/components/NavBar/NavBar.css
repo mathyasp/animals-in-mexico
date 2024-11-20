@@ -1,5 +1,5 @@
 .NavBar {
-  background-color: hsl(209, 52%, 39%);
+  background-color: #2b6cb0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,15 +33,15 @@
 }
 
 nav .link {
-  color: #fff;
-  background: none;
+  color: #ffffff;
+  background: transparent; /* Ensure background is transparent */
   font-size: 1.5em;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
 nav .link:hover {
-  color: #ccc;
+  color: #cccccc;
 }
 
 .NavBar .NavRight .TaskBars .randomlink {
@@ -64,19 +64,35 @@ nav .link:hover {
 
 .NavRight button {
   background-color: #f0f0f0; 
-  color: #000;
-  font-size: .8em;
-  padding: 0.5em .8em;
+  color: #000000;
+  font-size: 0.8em;
+  padding: 0.5em 0.8em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .NavRight button.selected {
-  background-color: #007BFF; 
-  color: #fff;
+  background-color: #007bff; 
+  color: #ffffff;
+}
+
+.NavRight button:hover {
+  background-color: #e0e0e0; 
+  color: #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+
+.NavRight button.selected:hover {
+  background-color: #0056b3; 
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
 
 .NavDate {
   font-size: 0.8em;
-  color: #ccc;
+  color: #cccccc;
 }
 
 a.randomlink {
@@ -87,6 +103,15 @@ a.randomlink {
   font-size: .8em;
   padding: 0.5em;
   text-align: center;
+  background-color: #007bff; 
+  color: #ffffff; 
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+a.randomlink:hover {
+  background-color: #0056b3; 
+  color: #ffffff; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
 
 @media screen and (max-width: 800px) {
@@ -105,7 +130,19 @@ a.randomlink {
   }
   .hamburger {
     display: block;
-    margin-left: .5em;
+    margin-left: 0.5em;
+    font-size: 2em;
+    color: #ffffff;
+    background-color: #2b6cb0;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 0.2em;
+    border-radius: 4px;
+  }
+  .hamburger:hover {
+    color: #cccccc;
+    background-color: #1f4f7a;
   }
   .menu {
     display: none;
@@ -139,7 +176,7 @@ a.randomlink {
   .TaskBars {
     grid-column: 1;
     justify-self: center;
-    margin: auto;
+    margin-left: auto;
   }
   .NavSubtitle,
   .NavDate {
