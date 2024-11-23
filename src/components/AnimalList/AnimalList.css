@@ -12,19 +12,18 @@
 .AnimalList a {
   font-size: 2em;
   text-align: center;
-  width: 24rem;
-  height: 36rem;
+  height: 100%;
+  width: clamp(300px, 36rem, 50vh);
+  aspect-ratio: 2/3;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
   position: relative;
   color: white;
   transition: transform 0.3s ease;
-  box-shadow: none; 
+  box-shadow: none;
   padding: 0;
   margin: 0;
-  width: clamp(280px, 24rem, 100%);
-  flex-shrink: 1;
 }
 
 .AnimalList a:hover {
@@ -54,7 +53,7 @@
 
 .AnimalList-animal h3 {
   position: absolute;
-  bottom: 80px; 
+  bottom: 60px; 
   left: 30px;
   margin: 0;
   transition: bottom 0.3s 0.3s ease-out;
@@ -82,7 +81,7 @@
 }
 
 .AnimalList a:hover h3 {
-  bottom: 220px; 
+  bottom: 280px; 
   transition: bottom 0.3s ease-out;
   color: white; 
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
@@ -91,6 +90,7 @@
 .AnimalList a:hover p,
 .AnimalList a:hover a {
   opacity: 1;
+  bottom: 60px;
   transition: opacity 0.5s 0.1s ease-in;
   color: white; 
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
