@@ -107,13 +107,5 @@
 @media only screen and (max-width: 800px) {
   .AnimalList {
     grid-template-columns: 1fr;
-    width: 85vw;
-  }
-  .AnimalList a {
-    width: 75vw;
-    margin: 0 auto;
-  }
-  .AnimalList-animal {
-    width: 100%;
   }
 }
