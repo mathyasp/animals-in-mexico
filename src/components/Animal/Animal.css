@@ -10,15 +10,19 @@
 
 .Animal-Image-Video {
   flex: 1;
-  max-width: 50%;
+  width: 50%;
+  aspect-ratio: 2/3;
+  position: relative;
   margin-right: 2em;
 }
 
 .Animal img, .Animal video {
-  width: auto;
-  height: 600px;
-  border-radius: 10px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  border-radius: 10px;
+  transition: opacity 0.2s ease-out;
 }
 
 .Animal-Details {
@@ -38,4 +42,32 @@
   margin: 0;
   font-size: 1.2em;
   line-height: 1.5;
+}
+
+@media screen and (max-width: 768px) {
+  .Animal {
+    flex-direction: column-reverse;
+    padding: 2em;
+    text-align: center;
+  }
+
+  .Animal-Image-Video {
+    width: 100%;
+    max-width: 500px;
+    min-width: 280px;
+    aspect-ratio: 3/4;
+    margin: 0 auto;
+  }
+
+  .Animal-Details {
+    max-width: 100%;
+    margin-bottom: 2em;
+    align-items: center;
+  }
+
+  .Animal img, .Animal video {
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+  }
 }
