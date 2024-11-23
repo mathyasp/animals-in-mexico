@@ -114,7 +114,7 @@ a.randomlink:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 576px) {
   .NavBar {
     display: grid;
     grid-template-rows: 1fr 1fr;
