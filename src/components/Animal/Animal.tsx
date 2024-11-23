@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { AnimalType } from '../../types';
 import englishDataWithIds from '../../../animalDataEnglish';
 import spanishDataWithIds from '../../../animalDataSpanish';
+
 interface AnimalProps {
   animal?: AnimalType;
   isSpanish: boolean;
@@ -27,14 +28,16 @@ function Animal({ animal, isSpanish }: AnimalProps) {
 
   return (
     <div className='Animal'>
-      <h1>{animal.name}</h1>
-      <p>{animal.desc}</p>
       <div className='Animal-Image-Video'>
         {animal.img && <img src={`/animals-in-mexico/images/${animal.img}`} alt={animal.name} />}
         {animal.vid && <video src={`/animals-in-mexico/videos/${animal.vid}`} controls muted loop />}
       </div>
+      <div className='Animal-Details'>
+        <h1>{animal.name}</h1>
+        <p>{animal.desc}</p>
+      </div>
     </div>
   );
-} 
+}
 
 export default Animal;
