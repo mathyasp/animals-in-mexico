@@ -10,11 +10,11 @@
 }
 
 .AnimalList a {
+  width: 100%;
+  max-width: min(36rem, 90vw);
+  aspect-ratio: 2/3;
   font-size: 2em;
   text-align: center;
-  height: 100%;
-  width: clamp(300px, 36rem, 50vh);
-  aspect-ratio: 2/3;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
@@ -107,5 +107,12 @@
 @media only screen and (max-width: 800px) {
   .AnimalList {
     grid-template-columns: 1fr;
+    padding: 1em;
+    max-width: 100%;
+    gap: 2em;
+  }
+
+  .AnimalList a {
+    width: 90%;
   }
 }

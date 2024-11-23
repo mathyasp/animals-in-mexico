@@ -122,6 +122,9 @@ a.randomlink:hover {
   .NavLeft, .NavCenter, .NavRight {
     width: 100%;
   }
+  .NavCenter h1, p {
+    margin-bottom: 0;
+  }
   .NavLeft {
     justify-content: center;
     align-self: first baseline;
@@ -162,24 +165,17 @@ a.randomlink:hover {
     margin-bottom: 5em;
   }
   .NavRight {
-    grid-column: span 2;
     grid-row: 2;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: flex-start;
+    z-index: 2;
   }
-  .Translate {
-    grid-column: 2;
+  .Translate, .TaskBars {
     margin-right: 0.5em;
+    margin-bottom: 0.5em;
     justify-self: flex-end;
-  }
-  .TaskBars {
-    grid-column: 1;
-    justify-self: center;
-    margin-left: auto;
   }
   .NavSubtitle,
   .NavDate {
-    display: none;
+    max-width: 50%;
   }
 }
