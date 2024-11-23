@@ -31,12 +31,6 @@ function NavBar({ isSpanish, handleLanguageChange, handleRandomClick }: NavBarPr
           >
             {isSpanish ? 'Inicio' : 'Home'}
           </Link>
-          <Link 
-            className={`link ${selectedLink === '/animals-in-mexico/animal-list' ? 'selected' : ''}`} 
-            to='/animals-in-mexico/animal-list'
-          >
-            {isSpanish ? 'Lista de Animales' : 'Animal List'}
-          </Link>
         </div>
       </nav>
 
