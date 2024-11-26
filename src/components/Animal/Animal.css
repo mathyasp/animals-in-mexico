@@ -1,23 +1,39 @@
 .Animal {
-  width: 100%;
+  position: relative; 
+  width: 100vw; 
+  height: 100vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   text-align: left;
-  padding: 5em;
+  padding: 1em;
+  overflow: hidden;
+}
+
+.Animal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.60);
+  z-index: 1;
 }
 
 .Animal-Image-Video {
   flex: 1;
-  width: 50%;
+  max-height: 80vh;
+  max-width: 40vw;
+  width: auto;
   aspect-ratio: 2/3;
   position: relative;
-  margin-right: 2em;
+  z-index: 2;
+  margin-right: 2em; 
 }
 
 .Animal img, .Animal video {
-  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -26,13 +42,12 @@
 }
 
 .Animal-Details {
-  flex: 2;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 40%;
-  padding: 1em;
-  margin-bottom: 2em;
+  z-index: 2;
 }
 
 .Animal-Details h1 {
@@ -54,11 +69,12 @@
   }
 
   .Animal-Image-Video {
-    width: 100%;
+    width: 80%;
+    height: auto;
     max-width: 500px;
     min-width: 280px;
     aspect-ratio: 3/4;
-    margin: 0 auto;
+    margin: 0 auto 2em;
   }
 
   .Animal-Details {
@@ -69,8 +85,8 @@
 
   .Animal img, .Animal video {
     position: relative;
-    height: 100%;
     width: 100%;
+    max-height: 100%;
     object-fit: cover;
   }
 }

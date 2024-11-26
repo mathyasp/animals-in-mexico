@@ -53,11 +53,8 @@
 }
 
 .App .Animal {
-  width: 75vw;
-  height: auto;
   color: var(--light-text-color);
   font-weight: bold;
-  margin: 0 auto;
 }
 
 .App .Animal-Filter {
