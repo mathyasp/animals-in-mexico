@@ -2,37 +2,37 @@
   {
     "name": "Gato",
     "desc": "Un gato es un animal doméstico que a menudo se mantiene como mascota. Es un animal pequeño, peludo, con cuatro patas, una cola y garras afiladas.",
-    "img": "cat.jpeg",
+    "img": "cat.jpg",
     "vid": ""
   },
   {
     "name": "Chihuahua",
     "desc": "El Chihuahua es la raza de perro más pequeña y lleva el nombre del estado mexicano de Chihuahua. Los Chihuahuas vienen en una amplia variedad de colores y dos longitudes de pelaje.",
-    "img": "chihuahua.jpeg",
+    "img": "chihuahua.jpg",
     "vid": ""
   },
   {
     "name": "Ave Fragata",
     "desc": "Las aves fragatas son una familia de aves marinas llamadas Fregatidae que se encuentran en todos los océanos tropicales y subtropicales. Las cinco especies existentes se clasifican en un solo género, Fregata.",
-    "img": "frigatebird.jpeg",
+    "img": "frigatebird.jpg",
     "vid": ""
   },
   {
     "name": "Gecko",
     "desc": "Los geckos son lagartos pertenecientes al infraorden Gekkota, que se encuentran en climas cálidos de todo el mundo. Tienen un rango de tamaño de 1.6 a 60 cm.",
-    "img": "gecko.jpeg",
+    "img": "gecko.jpg",
     "vid": ""
   },
   {
     "name": "Husky",
     "desc": "El Husky Siberiano es una raza de perro de tamaño mediano que se originó en el noreste de Asia. La raza pertenece a la familia genética Spitz.",
-    "img": "husky.jpeg",
+    "img": "husky.jpg",
     "vid": ""
   },
   {
     "name": "Garza Nocturna de Corona Amarilla",
     "desc": "La garza nocturna de corona amarilla es una de las dos especies de garzas nocturnas que se encuentran en las Américas, siendo la otra la garza nocturna de corona negra.",
-    "img": "yellowcrownednightheron.jpeg",
+    "img": "yellowcrownednightheron.jpg",
     "vid": ""
   },
   {

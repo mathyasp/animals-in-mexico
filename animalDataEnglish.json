@@ -2,37 +2,37 @@
   {
     "name": "Cat",
     "desc": "A cat is a domestic animal that is often kept as a pet. It is a small, furry animal with four legs, a tail, and sharp claws.",
-    "img": "cat.jpeg",
+    "img": "cat.jpg",
     "vid": ""
   },
   {
     "name": "Chihuahua",
     "desc": "The Chihuahua is the smallest breed of dog, and is named after the Mexican state of Chihuahua. Chihuahuas come in a wide variety of colors, and two coat lengths.",
-    "img": "chihuahua.jpeg",
+    "img": "chihuahua.jpg",
     "vid": ""
   },
   {
     "name": "Frigatebird",
     "desc": "Frigatebirds are a family of seabirds called Fregatidae which are found across all tropical and subtropical oceans. The five extant species are classified in a single genus, Fregata.",
-    "img": "frigatebird.jpeg",
+    "img": "frigatebird.jpg",
     "vid": ""
   },
   {
     "name": "Gecko",
     "desc": "Geckos are lizards belonging to the infraorder Gekkota, found in warm climates throughout the world. They range from 1.6 to 60 cm.",
-    "img": "gecko.jpeg",
+    "img": "gecko.jpg",
     "vid": ""
   },
   {
     "name": "Husky",
     "desc": "The Siberian Husky is a medium size working dog breed that originated in Northeast Asia. The breed belongs to the Spitz genetic family.",
-    "img": "husky.jpeg",
+    "img": "husky.jpg",
     "vid": ""
   },
   {
     "name": "Yellow Crowned Night Heron",
     "desc": "The yellow-crowned night heron is one of two species of night herons found in the Americas, the other one being the black-crowned night heron.",
-    "img": "yellowcrownednightheron.jpeg",
+    "img": "yellowcrownednightheron.jpg",
     "vid": ""
   },
   {

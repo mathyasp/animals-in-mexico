@@ -15,6 +15,23 @@
 
 html, body {
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.AnimalList, .Animal, .NavBar, .Map {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 a {
