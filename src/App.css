@@ -7,7 +7,7 @@
   background-image: url('/images/beach.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Makes background more stable when scrolling */
+  background-attachment: fixed;
   overflow: auto;
 }
 
@@ -19,8 +19,8 @@
   min-height: 80vh;
   text-align: center;
   padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-  color: white;
+  background-color: var(--shadow-color); 
+  color: var(--light-text-color);
 }
 
 .featured-animals {
@@ -42,8 +42,8 @@
 .App a {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
@@ -55,7 +55,7 @@
 .App .Animal {
   width: 75vw;
   height: auto;
-  color: white;
+  color: var(--light-text-color);
   font-weight: bold;
   margin: 0 auto;
 }

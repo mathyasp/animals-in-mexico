@@ -1,5 +1,5 @@
 .NavBar {
-  background-color: #2b6cb0;
+  background-color: var(--primary-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,15 +33,15 @@
 }
 
 nav .link {
-  color: #ffffff;
-  background: transparent; /* Ensure background is transparent */
+  color: var(--background-color);
+  background: transparent;
   font-size: 1.5em;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
 nav .link:hover {
-  color: #cccccc;
+  color: var(--light-text-color);
 }
 
 .NavBar .NavRight .TaskBars .randomlink {
@@ -54,7 +54,7 @@ nav .link:hover {
 }
 
 .NavLeft .link.selected {
-  color: #3e3e3e;
+  color: var(--dark-text-color);
 }
 
 .NavRight {
@@ -63,8 +63,8 @@ nav .link:hover {
 }
 
 .NavRight button {
-  background-color: #f0f0f0; 
-  color: #000000;
+  background-color: var(--background-color); 
+  color: var(--dark-text-color);
   font-size: 0.8em;
   padding: 0.5em 0.8em;
   border: none;
@@ -74,25 +74,25 @@ nav .link:hover {
 }
 
 .NavRight button.selected {
-  background-color: #007bff; 
-  color: #ffffff;
+  background-color: var(--secondary-color); 
+  color: var(--light-text-color);
 }
 
 .NavRight button:hover {
-  background-color: #e0e0e0; 
-  color: #000000;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  background-color: var(--light-hover-color); 
+  color: var(--dark-text-color);
+  box-shadow: 0 0 10px var(--shadow-color); 
 }
 
 .NavRight button.selected:hover {
-  background-color: #0056b3; 
-  color: #ffffff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  background-color: var(--dark-primary); 
+  color: var(--light-text-color);
+  box-shadow: 0 0 10px var(--shadow-color); 
 }
 
 .NavDate {
   font-size: 0.8em;
-  color: #cccccc;
+  color: var(--light-text-color);
 }
 
 a.randomlink {
@@ -103,15 +103,15 @@ a.randomlink {
   font-size: .8em;
   padding: 0.5em;
   text-align: center;
-  background-color: #007bff; 
-  color: #ffffff; 
+  background-color: var(--secondary-color); 
+  color: var(--light-text-color); 
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 a.randomlink:hover {
-  background-color: #0056b3; 
-  color: #ffffff; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  background-color: var(--dark-primary); 
+  color: var(--light-text-color); 
+  box-shadow: 0 0 10px var(--shadow-color); 
 }
 
 @media screen and (max-width: 576px) {
@@ -119,37 +119,44 @@ a.randomlink:hover {
     display: grid;
     grid-template-rows: 1fr 1fr;
   }
+
   .NavLeft, .NavCenter, .NavRight {
     width: 100%;
   }
+
   .NavCenter h1, p {
     margin-bottom: 0;
   }
+
   .NavLeft {
     justify-content: center;
     align-self: first baseline;
     display: flex;
     grid-row: 2; 
   }
+
   .hamburger {
     display: block;
     margin-left: 0.5em;
     font-size: 2em;
-    color: #ffffff;
-    background-color: #2b6cb0;
+    color: var(--light-text-color);
+    background-color: var(--primary-color);
     border: none;
     cursor: pointer;
     transition: color 0.3s ease, background-color 0.3s ease;
     padding: 0.2em;
     border-radius: 4px;
   }
+
   .hamburger:hover {
-    color: #cccccc;
-    background-color: #1f4f7a;
+    color: var(--light-text-color);
+    background-color: var(--dark-primary);
   }
+
   .menu {
     display: none;
   }
+
   .menu.open {
     display: flex;
     flex-direction: column;
@@ -157,25 +164,32 @@ a.randomlink:hover {
     position: absolute;
     left: 75%;
     top: 10;
-    z-index: 1; /* Added to ensure .menu.open is above other elements */
+    z-index: 1;
   }
+
   .NavCenter {
     grid-row: 1;
     position: absolute;
     margin-bottom: 5em;
   }
+
   .NavRight {
+    padding: 0;
     grid-row: 2;
     display: grid;
     z-index: 2;
   }
+
   .Translate, .TaskBars {
     margin-right: 0.5em;
-    margin-bottom: 0.5em;
     justify-self: flex-end;
   }
-  .NavSubtitle,
-  .NavDate {
+
+  .TaskBars {
+    margin-bottom: 0.5em;
+  }
+
+  .NavSubtitle, .NavDate {
     max-width: 50%;
   }
 }
